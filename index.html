@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step3D : annotation de la marche</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="logo">S</span> Step3D</div>
+      <div class="section-title">Sujets</div>
+      <nav id="liste-sujets"></nav>
+    </aside>
+
+    <main class="centre">
+      <header class="entete">
+        <h1 id="titre-essai">Choisissez un essai</h1>
+        <span id="infos-essai" class="infos"></span>
+      </header>
+      <div class="scene-wrap">
+        <div id="scene"></div>
+        <div id="cartouche" class="cartouche"></div>
+        <div class="aide-3d">Z Q S D : déplacer la vue</div>
+      </div>
+      <section class="commandes">
+        <div class="boutons-lecture">
+          <button id="btn-debut" title="Première image">⏮</button>
+          <button id="btn-prec" title="Image précédente (←)">◀ 1</button>
+          <button id="btn-lecture" title="Lecture / pause (Espace)">▶</button>
+          <button id="btn-suiv" title="Image suivante (→)">1 ▶</button>
+          <button id="btn-fin" title="Dernière image">⏭</button>
+        </div>
+        <span id="temps" class="temps">00:00.00</span>
+        <div class="vitesses">
+          <button data-vitesse="0.25">¼×</button>
+          <button data-vitesse="0.5">½×</button>
+          <button data-vitesse="1" class="actif">1×</button>
+          <button data-vitesse="2">2×</button>
+        </div>
+      </section>
+      <input id="curseur" type="range" min="0" max="0" value="0">
+      <div class="frise">
+        <div class="piste"><span>G</span><div id="frise-gauche" class="zone"></div></div>
+        <div class="piste"><span>D</span><div id="frise-droit" class="zone"></div></div>
+      </div>
+    </main>
+
+    <aside class="panneau">
+      <div class="bloc">
+        <div class="titre-bloc">Événements <span id="nb-evenements">0</span></div>
+        <div class="grille-actions">
+          <button data-action="pose" data-pied="gauche">▼ Pose G</button>
+          <button data-action="lever" data-pied="gauche">▲ Lever G</button>
+          <button data-action="pose" data-pied="droit">▼ Pose D</button>
+          <button data-action="lever" data-pied="droit">▲ Lever D</button>
+        </div>
+        <ul id="liste-evenements" class="liste-evenements"></ul>
+      </div>
+      <div class="bloc">
+        <div class="titre-bloc">Raccourcis</div>
+        <div class="raccourcis">
+          <div><kbd>Espace</kbd> lecture / pause</div>
+          <div><kbd>←</kbd> <kbd>→</kbd> image précédente / suivante</div>
+          <div><kbd>Z</kbd><kbd>Q</kbd><kbd>S</kbd><kbd>D</kbd> déplacer la vue 3D</div>
+        </div>
+      </div>
+      <div id="message" class="message"></div>
+    </aside>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
