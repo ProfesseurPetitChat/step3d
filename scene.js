@@ -13,7 +13,7 @@ const ARETES = [
   ["R_TTC", "R_FAL"], ["R_FAL", "R_FCC"], ["R_FCC", "R_FM1"], ["R_FCC", "R_FM5"], ["R_FM1", "R_FM5"],
 ];
 
-const TRAJECTOIRES = ["L_FCC", "R_FCC"];
+const TRAJECTOIRES = ["L_FCC", "R_FCC", "L_FM1", "R_FM1"];
 
 const NOMS_MARQUEURS = [
   "L_IAS", "L_IPS", "R_IPS", "R_IAS",
